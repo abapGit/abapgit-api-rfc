@@ -196,6 +196,7 @@
     "avoid_use": {
       "define": true,
       "defaultKey": false,
+      "testSeams": true,
       "describeLines": true,
       "break": true,
       "statics": true
@@ -283,7 +284,6 @@
       "local": "^LCL_.*$",
       "test": "^LT.+$"
     },
-    "local_testclass_location": true,
     "main_file_contents": true,
     "max_one_statement": true,
     "message_exists": false,
@@ -322,10 +322,13 @@
     "obsolete_statement": {
       "refresh": true,
       "compute": true,
+      "clientSpecified": true,
       "add": true,
       "occurences": true,
       "selectWithoutInto": true,
       "ranges": true,
+      "formDefinition": true,
+      "formImplementation": true,
       "callTransformation": true,
       "regex": true,
       "sortByFS": true,
