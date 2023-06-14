@@ -37,19 +37,19 @@ FUNCTION zabapgit_api_rfc_pull.
       LOOP AT checks-overwrite ASSIGNING FIELD-SYMBOL(<overwrite>).
         " object has been modified locally
         " decision field must be filled with y or n. y overwrites the object
-        <overwrite>-decision = 'y'.
+        <overwrite>-decision = 'Y'.
       ENDLOOP.
 
       APPEND VALUE #( type = 'I' message = |Correct packages| ) TO return.
       LOOP AT checks-warning_package ASSIGNING FIELD-SYMBOL(<warning_package>).
         " y or n if object from unexpected package should be overwritten
-        <warning_package>-decision = 'y'.
+        <warning_package>-decision = 'Y'.
       ENDLOOP.
 
       APPEND VALUE #( type = 'I' message = |Requirements| ) TO return.
-      IF checks-requirements-met = 'n'.
+      IF checks-requirements-met = 'N'.
         " code must decide if deserialization should continue or not
-        checks-requirements-decision = 'y'.
+        checks-requirements-decision = 'Y'.
       ENDIF.
 
       APPEND VALUE #( type = 'I' message = |Transport| ) TO return.
