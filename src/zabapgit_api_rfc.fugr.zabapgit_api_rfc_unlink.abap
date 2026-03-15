@@ -4,7 +4,7 @@ FUNCTION zabapgit_api_rfc_unlink.
 *"  IMPORTING
 *"     VALUE(ABAP_PACKAGE) TYPE  DEVCLASS
 *"  TABLES
-*"      RETURN STRUCTURE  BAPIRET2
+*"      RETURN TYPE  BAPIRET2_T
 *"--------------------------------------------------------------------
   TRY.
       APPEND VALUE #( type = 'I' message = |Running migrations| ) TO return.

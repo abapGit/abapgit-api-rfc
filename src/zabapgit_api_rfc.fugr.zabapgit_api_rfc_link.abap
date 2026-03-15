@@ -12,7 +12,7 @@ FUNCTION zabapgit_api_rfc_link.
 *"     VALUE(MAIN_LANG_ONLY) TYPE  XFELD DEFAULT ''
 *"     VALUE(STARTING_FOLDER) TYPE  STRING DEFAULT '/src/'
 *"  TABLES
-*"      RETURN STRUCTURE  BAPIRET2
+*"      RETURN TYPE  BAPIRET2_T
 *"--------------------------------------------------------------------
   IF abap_package IS INITIAL.
     " https://github.com/abapgit/abapgit.git -> [ 'https:', '', 'github.com', 'abapgit', 'abapgit.git']
