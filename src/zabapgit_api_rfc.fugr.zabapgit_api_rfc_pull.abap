@@ -25,7 +25,7 @@ FUNCTION zabapgit_api_rfc_pull.
       ENDIF.
 
       APPEND VALUE #( type = 'I' message = |Setting credentials of { git_user } for { repo->ms_data-url }| ) TO return.
-      zcl_abapgit_login_manager=>set(
+      zcl_abapgit_login_manager=>set_basic(
         iv_uri = repo->ms_data-url
         iv_username = git_user
         iv_password = git_password ).
