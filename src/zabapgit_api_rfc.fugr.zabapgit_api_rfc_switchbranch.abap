@@ -7,7 +7,7 @@ FUNCTION zabapgit_api_rfc_switchbranch.
 *"     VALUE(GIT_USER) TYPE  STRING
 *"     VALUE(GIT_PASSWORD) TYPE  STRING
 *"  TABLES
-*"      RETURN STRUCTURE  BAPIRET2
+*"      RETURN TYPE  BAPIRET2_T
 *"--------------------------------------------------------------------
   TRY.
       APPEND VALUE #( type = 'I' message = 'Run migration' ) TO return.
@@ -28,7 +28,7 @@ FUNCTION zabapgit_api_rfc_switchbranch.
       DATA(url) = online_repo->get_url( ).
 
       APPEND VALUE #( type = 'I' message = |Setting credentials of { git_user } for { url }| ) TO return.
-      zcl_abapgit_login_manager=>set(
+      zcl_abapgit_login_manager=>set_basic(
         iv_uri = url
         iv_username = git_user
         iv_password = git_password ).

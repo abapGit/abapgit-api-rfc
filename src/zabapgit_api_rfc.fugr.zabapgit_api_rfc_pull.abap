@@ -7,7 +7,7 @@ FUNCTION zabapgit_api_rfc_pull.
 *"     VALUE(GIT_PASSWORD) TYPE  STRING
 *"     VALUE(CORRNR) TYPE  TRKORR DEFAULT ''
 *"  TABLES
-*"      RETURN STRUCTURE  BAPIRET2
+*"      RETURN TYPE  BAPIRET2_T
 *"--------------------------------------------------------------------
   TRY.
       APPEND VALUE #( type = 'I' message = 'Run migration' ) TO return.
@@ -25,7 +25,7 @@ FUNCTION zabapgit_api_rfc_pull.
       ENDIF.
 
       APPEND VALUE #( type = 'I' message = |Setting credentials of { git_user } for { repo->ms_data-url }| ) TO return.
-      zcl_abapgit_login_manager=>set(
+      zcl_abapgit_login_manager=>set_basic(
         iv_uri = repo->ms_data-url
         iv_username = git_user
         iv_password = git_password ).

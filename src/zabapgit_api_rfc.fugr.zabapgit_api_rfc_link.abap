@@ -12,7 +12,7 @@ FUNCTION zabapgit_api_rfc_link.
 *"     VALUE(MAIN_LANG_ONLY) TYPE  XFELD DEFAULT ''
 *"     VALUE(STARTING_FOLDER) TYPE  STRING DEFAULT '/src/'
 *"  TABLES
-*"      RETURN STRUCTURE  BAPIRET2
+*"      RETURN TYPE  BAPIRET2_T
 *"--------------------------------------------------------------------
   IF abap_package IS INITIAL.
     " https://github.com/abapgit/abapgit.git -> [ 'https:', '', 'github.com', 'abapgit', 'abapgit.git']
@@ -53,7 +53,7 @@ FUNCTION zabapgit_api_rfc_link.
       zcl_abapgit_migrations=>run( ).
 
       APPEND VALUE #( type = 'I' message = |Setting credentials of { git_user } for { git_repo_url }| ) TO return.
-      zcl_abapgit_login_manager=>set(
+      zcl_abapgit_login_manager=>set_basic(
         iv_uri = git_repo_url
         iv_username = git_user
         iv_password = git_password ).
