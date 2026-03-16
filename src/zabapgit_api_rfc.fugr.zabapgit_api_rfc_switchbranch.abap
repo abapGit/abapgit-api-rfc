@@ -7,7 +7,7 @@ FUNCTION zabapgit_api_rfc_switchbranch.
 *"     VALUE(GIT_USER) TYPE  STRING
 *"     VALUE(GIT_PASSWORD) TYPE  STRING
 *"  TABLES
-*"      RETURN STRUCTURE  BAPIRET2
+*"      RETURN TYPE  BAPIRET2_T
 *"--------------------------------------------------------------------
   TRY.
       APPEND VALUE #( type = 'I' message = 'Run migration' ) TO return.
