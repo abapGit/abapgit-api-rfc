@@ -112,6 +112,31 @@
      </DOCUMENTATION>
     </item>
     <item>
+     <FUNCNAME>ZABAPGIT_API_RFC_LIST</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>abapGit RFC listing linked repositories</SHORT_TEXT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>REPOSITORIES</PARAMETER>
+       <TYP>ZABAPGIT_API_RFC_REPO_T</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>RETURN</PARAMETER>
+       <TYP>BAPIRET2_T</TYP>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>REPOSITORIES</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RETURN</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
      <FUNCNAME>ZABAPGIT_API_RFC_PULL</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
      <SHORT_TEXT>abapGit RFC pulling a repo with a package</SHORT_TEXT>
