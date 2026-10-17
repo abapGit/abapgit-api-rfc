@@ -10,6 +10,7 @@ It allows you to perform the following actions:
 3. Switch the branch
 4. Unlink the repository
 5. List the repositories
+6. Commit and push all changes
 
 ## Requirements and installation
 1. Install the [sapcli](https://github.com/jfilak/sapcli)
@@ -85,4 +86,25 @@ ZABAPGIT_API_RFC_LIST
 example:
 ```
 sapcli startrfc -c bapi ZABAPGIT_API_RFC_LIST
+```
+
+### Commit and push
+ZABAPGIT_API_RFC_COMMITPUSH
+- required
+    - ABAP_PACKAGE
+    - GIT_USER
+    - GIT_PASSWORD
+    - COMMENT - the commit subject
+    - ALL - must be 'X'; only committing all changes reported by abapGit is supported
+- optional
+    - BODY - the long commit message, separated from COMMENT by an empty line
+    - COMMITTER_NAME, COMMITTER_EMAIL - default to the abapGit user settings,
+      then to the user master record and finally to the SAP user name
+    - AUTHOR_NAME, AUTHOR_EMAIL - default to the committer
+
+The committed and deleted objects are reported in RETURN as messages of the type S.
+
+example:
+```
+sapcli startrfc -c bapi ZABAPGIT_API_RFC_COMMITPUSH -S=ABAP_PACKAGE:'$BACKGROUND_MODES' -S=GIT_USER:filak-sap -S=GIT_PASSWORD:${MY_GH_TOKEN} -S=ALL:X -S=COMMENT:'Update objects'
 ```
