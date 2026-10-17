@@ -9,6 +9,7 @@ It allows you to perform the following actions:
 2. Pull the repository
 3. Switch the branch
 4. Unlink the repository
+5. List the repositories
 
 ## Requirements and installation
 1. Install the [sapcli](https://github.com/jfilak/sapcli)
@@ -74,3 +75,14 @@ example:
 sapcli startrfc -c bapi ZABAPGIT_API_RFC_UNLINK -S=ABAP_PACKAGE:'$BACKGROUND_MODES'
 ```
 
+### List repositories
+ZABAPGIT_API_RFC_LIST
+- no parameters
+- returns the table REPOSITORIES (ZABAPGIT_API_RFC_REPO_T) with the fields
+  REPO_KEY, NAME, ABAP_PACKAGE, IS_OFFLINE, URL, BRANCH_NAME, SELECTED_COMMIT,
+  CREATED_BY, CREATED_AT, DESERIALIZED_BY, DESERIALIZED_AT
+
+example:
+```
+sapcli startrfc -c bapi ZABAPGIT_API_RFC_LIST
+```
