@@ -1,10 +1,10 @@
 FUNCTION zabapgit_api_rfc_list.
-*"--------------------------------------------------------------------
+*"----------------------------------------------------------------------
 *"*"Local Interface:
 *"  TABLES
 *"      REPOSITORIES TYPE  ZABAPGIT_API_RFC_REPO_T
 *"      RETURN TYPE  BAPIRET2_T
-*"--------------------------------------------------------------------
+*"----------------------------------------------------------------------
   TRY.
       APPEND VALUE #( type = 'I' message = |Running migrations| ) TO return.
       zcl_abapgit_migrations=>run( ).

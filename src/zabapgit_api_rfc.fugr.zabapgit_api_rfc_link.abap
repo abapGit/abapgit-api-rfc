@@ -1,5 +1,5 @@
 FUNCTION zabapgit_api_rfc_link.
-*"--------------------------------------------------------------------
+*"----------------------------------------------------------------------
 *"*"Local Interface:
 *"  IMPORTING
 *"     VALUE(ABAP_PACKAGE) TYPE  DEVCLASS DEFAULT ''
@@ -13,7 +13,7 @@ FUNCTION zabapgit_api_rfc_link.
 *"     VALUE(STARTING_FOLDER) TYPE  STRING DEFAULT '/src/'
 *"  TABLES
 *"      RETURN TYPE  BAPIRET2_T
-*"--------------------------------------------------------------------
+*"----------------------------------------------------------------------
   IF abap_package IS INITIAL.
     " https://github.com/abapgit/abapgit.git -> [ 'https:', '', 'github.com', 'abapgit', 'abapgit.git']
     SPLIT git_repo_url AT '/' INTO TABLE DATA(url_parts).

@@ -1,5 +1,5 @@
 FUNCTION zabapgit_api_rfc_commitpush.
-*"--------------------------------------------------------------------
+*"----------------------------------------------------------------------
 *"*"Local Interface:
 *"  IMPORTING
 *"     VALUE(ABAP_PACKAGE) TYPE  DEVCLASS
@@ -14,7 +14,7 @@ FUNCTION zabapgit_api_rfc_commitpush.
 *"     VALUE(AUTHOR_EMAIL) TYPE  STRING DEFAULT ''
 *"  TABLES
 *"      RETURN TYPE  BAPIRET2_T
-*"--------------------------------------------------------------------
+*"----------------------------------------------------------------------
   DATA committed TYPE STANDARD TABLE OF string WITH DEFAULT KEY.
 
   TRY.
