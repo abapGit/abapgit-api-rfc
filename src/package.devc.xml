@@ -4,7 +4,6 @@
   <asx:values>
    <DEVC>
     <CTEXT>abapGit operations wrapped in RFC Function Modules</CTEXT>
-    <SRV_CHECK>X</SRV_CHECK>
    </DEVC>
   </asx:values>
  </asx:abap>

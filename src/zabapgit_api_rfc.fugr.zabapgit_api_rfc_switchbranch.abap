@@ -1,5 +1,5 @@
 FUNCTION zabapgit_api_rfc_switchbranch.
-*"--------------------------------------------------------------------
+*"----------------------------------------------------------------------
 *"*"Local Interface:
 *"  IMPORTING
 *"     VALUE(ABAP_PACKAGE) TYPE  DEVCLASS
@@ -8,7 +8,7 @@ FUNCTION zabapgit_api_rfc_switchbranch.
 *"     VALUE(GIT_PASSWORD) TYPE  STRING
 *"  TABLES
 *"      RETURN TYPE  BAPIRET2_T
-*"--------------------------------------------------------------------
+*"----------------------------------------------------------------------
   TRY.
       APPEND VALUE #( type = 'I' message = 'Run migration' ) TO return.
       zcl_abapgit_migrations=>run( ).

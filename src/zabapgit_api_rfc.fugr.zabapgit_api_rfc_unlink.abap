@@ -1,11 +1,11 @@
 FUNCTION zabapgit_api_rfc_unlink.
-*"--------------------------------------------------------------------
+*"----------------------------------------------------------------------
 *"*"Local Interface:
 *"  IMPORTING
 *"     VALUE(ABAP_PACKAGE) TYPE  DEVCLASS
 *"  TABLES
 *"      RETURN TYPE  BAPIRET2_T
-*"--------------------------------------------------------------------
+*"----------------------------------------------------------------------
   TRY.
       APPEND VALUE #( type = 'I' message = |Running migrations| ) TO return.
       zcl_abapgit_migrations=>run( ).
